@@ -3,49 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Estate Mate — Central Texas Landscaping</title>
-  <meta name="description" content="Estate Mate provides premium landscaping, lawn care, and landscape design services across Central Texas. Serving Austin, Georgetown, Round Rock, Cedar Park, and beyond.">
+  <title>Estate Mate — Central Texas Lawn Care & Landscaping</title>
+  <meta name="description" content="Affordable, reliable lawn care and landscaping across Central Texas. Licensed, insured, no contracts. Free estimates in 24 hours. Serving Austin, Georgetown, Round Rock, Cedar Park, and more.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --ink:        #070e07;
-      --forest:     #0b1a0d;
-      --forest-mid: #122017;
-      --sage:       #2e5c3a;
-      --moss:       #4a8c5a;
-      --gold:       #c8a456;
-      --gold-lt:    #e2c07e;
-      --cream:      #f3ece0;
-      --warm-white: #faf7f2;
-      --stone:      #7a7268;
-      --bone:       #e8e0d4;
+      --green:      #1e6b30;
+      --green-dk:   #164d23;
+      --green-lt:   #e8f4eb;
+      --green-mid:  #2d8040;
+      --amber:      #e07c20;
+      --amber-lt:   #f5a43a;
+      --white:      #ffffff;
+      --off-white:  #f8f8f6;
+      --gray-100:   #f3f4f6;
+      --gray-300:   #d1d5db;
+      --gray-500:   #6b7280;
+      --gray-700:   #374151;
+      --gray-900:   #111827;
 
-      --font-display: 'Cormorant Garamond', Georgia, serif;
-      --font-body:    'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-
+      --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       --px: 1.25rem;
+      --radius: 6px;
     }
 
     html { scroll-behavior: smooth; }
 
-    /* Force Plus Jakarta Sans on every text element */
-    body, input, select, textarea, button {
-      font-family: var(--font-body);
-      font-size: 16px;
-      line-height: 1.6;
+    *, body, input, select, textarea, button {
+      font-family: var(--font);
     }
 
     body {
-      background: var(--warm-white);
-      color: var(--forest);
+      background: var(--white);
+      color: var(--gray-900);
+      font-size: 16px;
+      line-height: 1.6;
       overflow-x: hidden;
     }
 
@@ -54,722 +54,655 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      padding: 1rem var(--px);
+      padding: 0.9rem var(--px);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      transition: background 0.4s ease, backdrop-filter 0.4s ease;
-    }
-    nav.scrolled {
-      background: rgba(250,247,242,0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(46,92,58,0.12);
+      background: var(--white);
+      border-bottom: 2px solid var(--green);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
     .nav-logo {
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--forest);
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--green-dk);
       text-decoration: none;
       flex-shrink: 0;
     }
-    .nav-logo span { color: var(--gold); }
+    .nav-logo span { color: var(--amber); }
     .nav-links {
       display: none;
       align-items: center;
-      gap: 2.5rem;
+      gap: 2rem;
       list-style: none;
     }
     .nav-links a {
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(11,26,13,0.6);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gray-700);
       text-decoration: none;
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover { color: var(--green); }
     .nav-cta {
-      font-size: 0.7rem !important;
-      font-weight: 600 !important;
-      color: var(--forest) !important;
-      background: var(--gold);
-      padding: 0.6rem 1.25rem;
-      border-radius: 2px;
+      font-size: 0.8rem !important;
+      font-weight: 700 !important;
+      color: var(--white) !important;
+      background: var(--amber) !important;
+      padding: 0.55rem 1.25rem !important;
+      border-radius: var(--radius) !important;
       transition: background 0.2s !important;
-      white-space: nowrap;
     }
-    .nav-cta:hover { background: var(--gold-lt) !important; }
-
-    /* Mobile CTA in nav */
+    .nav-cta:hover { background: var(--amber-lt) !important; color: var(--white) !important; }
     .nav-mobile-cta {
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--forest);
-      background: var(--gold);
-      padding: 0.55rem 1rem;
-      border-radius: 2px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--white);
+      background: var(--amber);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius);
       text-decoration: none;
+      white-space: nowrap;
     }
 
     /* ── HERO ────────────────────────────────────── */
     #hero {
-      min-height: 100svh;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 7rem var(--px) 4rem;
-      overflow: hidden;
+      padding: 5.5rem var(--px) 3.5rem;
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-100);
     }
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 80% 60% at 75% 20%, rgba(74,140,90,0.1) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 80% at 10% 90%, rgba(200,164,86,0.08) 0%, transparent 50%),
-        linear-gradient(160deg, #faf7f2 0%, #f3ece0 60%, #f0ead8 100%);
-    }
-    .hero-botanical {
-      display: none;
-      position: absolute;
-      right: -40px;
-      bottom: -20px;
-      width: 52vw;
-      max-width: 780px;
-      opacity: 0.18;
-      pointer-events: none;
-    }
-    .hero-badge {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.62rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid rgba(200,164,86,0.4);
-      padding: 0.4rem 0.9rem;
+      color: var(--green);
+      background: var(--green-lt);
+      padding: 0.35rem 0.9rem;
       border-radius: 100px;
-      margin-bottom: 2rem;
+      margin-bottom: 1.25rem;
       opacity: 0;
-      width: fit-content;
-    }
-    .hero-badge::before {
-      content: '';
-      width: 5px; height: 5px;
-      border-radius: 50%;
-      background: var(--gold);
-      flex-shrink: 0;
     }
     .hero-heading {
-      position: relative;
-      font-family: var(--font-display);
-      font-weight: 300;
-      line-height: 0.92;
-      color: var(--forest);
-      margin-bottom: 1.75rem;
+      font-size: clamp(2.2rem, 8vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--gray-900);
+      margin-bottom: 1.25rem;
+      opacity: 0;
     }
-    .hero-heading .line { display: block; overflow: hidden; }
-    .hero-heading .word { display: inline-block; opacity: 0; transform: translateY(110%); }
-    .hero-heading .size-xl {
-      font-size: clamp(3.2rem, 11vw, 9.5rem);
-      letter-spacing: -0.02em;
-    }
-    .hero-heading .size-italic {
-      font-size: clamp(2.8rem, 10vw, 8.5rem);
-      font-style: italic;
-      font-weight: 300;
-      color: var(--gold);
-      letter-spacing: -0.01em;
-    }
-    .hero-heading .size-sub {
-      font-size: clamp(2rem, 7vw, 6rem);
-      letter-spacing: 0.04em;
-      font-weight: 300;
+    .hero-heading em {
+      font-style: normal;
+      color: var(--green);
     }
     .hero-body {
-      position: relative;
-      max-width: 460px;
-      font-size: 0.92rem;
-      font-weight: 300;
-      color: rgba(11,26,13,0.62);
-      line-height: 1.8;
-      margin-bottom: 2.5rem;
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--gray-500);
+      line-height: 1.75;
+      max-width: 500px;
+      margin-bottom: 2rem;
       opacity: 0;
     }
     .hero-actions {
-      position: relative;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 1rem;
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
       opacity: 0;
     }
     .btn-primary {
       display: inline-flex;
       align-items: center;
-      gap: 0.75rem;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--forest);
-      background: var(--gold);
-      padding: 1rem 2rem;
-      border-radius: 2px;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--white);
+      background: var(--green);
+      padding: 0.9rem 1.75rem;
+      border-radius: var(--radius);
       text-decoration: none;
-      transition: background 0.2s, transform 0.2s;
+      transition: background 0.2s, transform 0.15s;
       white-space: nowrap;
     }
-    .btn-primary:hover { background: var(--gold-lt); transform: translateY(-1px); }
-    .btn-primary svg { transition: transform 0.2s; flex-shrink: 0; }
-    .btn-primary:hover svg { transform: translateX(3px); }
-    .hero-phone {
-      font-size: 0.85rem;
-      color: rgba(11,26,13,0.5);
-      text-decoration: none;
-      transition: color 0.2s;
-      padding: 0.25rem 0;
-    }
-    .hero-phone:hover { color: var(--sage); }
-    .hero-scroll-line {
-      position: absolute;
-      bottom: 1.75rem;
-      left: var(--px);
-      display: flex;
+    .btn-primary:hover { background: var(--green-mid); transform: translateY(-1px); }
+    .btn-secondary {
+      display: inline-flex;
       align-items: center;
-      gap: 0.75rem;
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(11,26,13,0.35);
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      background: var(--white);
+      border: 2px solid var(--gray-300);
+      padding: 0.85rem 1.6rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: border-color 0.2s;
+      white-space: nowrap;
+    }
+    .btn-secondary:hover { border-color: var(--green); color: var(--green); }
+
+    /* Trust badges */
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
       opacity: 0;
     }
-    .hero-scroll-line::after {
-      content: '';
-      width: 40px; height: 1px;
-      background: rgba(11,26,13,0.18);
+    .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.73rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      background: var(--gray-100);
+      border: 1px solid var(--gray-300);
+      padding: 0.35rem 0.75rem;
+      border-radius: 100px;
+    }
+    .trust-badge .check {
+      color: var(--green);
+      font-size: 0.85rem;
     }
 
     /* ── MARQUEE ─────────────────────────────────── */
     .marquee-strip {
-      background: var(--cream);
-      padding: 1rem 0;
+      background: var(--green);
+      padding: 0.75rem 0;
       overflow: hidden;
-      border-top: 1px solid rgba(46,92,58,0.12);
-      border-bottom: 1px solid rgba(46,92,58,0.12);
     }
     .marquee-track {
       display: flex;
       white-space: nowrap;
-      animation: marquee 28s linear infinite;
+      animation: marquee 24s linear infinite;
     }
     .marquee-item {
-      font-family: var(--font-display);
-      font-size: 0.95rem;
-      font-weight: 300;
-      font-style: italic;
-      letter-spacing: 0.08em;
-      color: rgba(11,26,13,0.45);
-      padding-right: 3rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      padding-right: 2.5rem;
       flex-shrink: 0;
     }
-    .marquee-item .dot { color: var(--gold); margin-right: 3rem; }
+    .marquee-item .dot { color: var(--amber-lt); margin-right: 2.5rem; }
     @keyframes marquee {
       from { transform: translateX(0); }
       to   { transform: translateX(-50%); }
     }
 
-    /* ── SECTIONS BASE ───────────────────────────── */
-    .section-label {
-      font-size: 0.62rem;
-      font-weight: 600;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.25rem;
+    /* ── WHY US BAR ──────────────────────────────── */
+    #why-bar {
+      background: var(--off-white);
+      border-bottom: 1px solid var(--gray-300);
+      padding: 2.5rem var(--px);
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+    .why-item {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 0.75rem;
     }
-    .section-label::before {
-      content: '';
-      width: 24px; height: 1px;
-      background: var(--gold);
+    .why-icon {
+      width: 36px; height: 36px;
+      background: var(--green-lt);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
+      color: var(--green);
+      font-size: 1rem;
     }
-    .section-heading {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 5vw, 5rem);
-      font-weight: 300;
-      line-height: 1.05;
-      color: var(--forest);
-      margin-bottom: 3rem;
+    .why-item h4 {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 0.15rem;
     }
-    .section-heading em { font-style: italic; color: var(--gold); }
+    .why-item p {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      line-height: 1.5;
+    }
 
     /* ── SERVICES ────────────────────────────────── */
     #services {
-      padding: 4.5rem var(--px);
-      background: var(--warm-white);
+      padding: 3.5rem var(--px);
+      background: var(--white);
+    }
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.6rem;
+    }
+    .section-heading {
+      font-size: clamp(1.6rem, 4vw, 2.75rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--gray-900);
+      margin-bottom: 2rem;
+      line-height: 1.15;
     }
     .services-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 1px;
-      background: rgba(11,26,13,0.08);
+      gap: 1rem;
     }
     .service-card {
-      background: var(--warm-white);
-      padding: 2rem 1.5rem;
-      position: relative;
-      cursor: default;
-      transition: background 0.3s;
-      overflow: hidden;
+      background: var(--off-white);
+      border: 2px solid var(--gray-100);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
-    .service-card::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 0; bottom: 0;
-      width: 3px;
-      background: var(--gold);
-      transform: scaleY(0);
-      transform-origin: bottom;
-      transition: transform 0.35s ease;
+    .service-card:hover {
+      border-color: var(--green);
+      box-shadow: 0 4px 16px rgba(30,107,48,0.1);
     }
-    .service-card:hover { background: rgba(46,92,58,0.05); }
-    .service-card:hover::before { transform: scaleY(1); }
-    .service-num {
-      font-family: var(--font-display);
-      font-size: 0.8rem;
-      font-weight: 300;
-      color: rgba(200,164,86,0.7);
-      letter-spacing: 0.1em;
-      margin-bottom: 1rem;
-    }
-    .service-icon {
-      width: 36px; height: 36px;
-      margin-bottom: 1rem;
-      color: var(--sage);
+    .service-icon-wrap {
+      width: 40px; height: 40px;
+      background: var(--green-lt);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--green);
+      margin-bottom: 0.9rem;
     }
     .service-name {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 400;
-      color: var(--forest);
-      margin-bottom: 0.6rem;
-      line-height: 1.2;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 0.4rem;
     }
     .service-desc {
-      font-size: 0.83rem;
-      font-weight: 300;
-      color: var(--stone);
-      line-height: 1.75;
+      font-size: 0.82rem;
+      color: var(--gray-500);
+      line-height: 1.7;
     }
-
-    /* ── PHILOSOPHY ──────────────────────────────── */
-    #philosophy {
-      background: var(--cream);
-      padding: 4.5rem var(--px);
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-    }
-    .philosophy-quote {
-      font-family: var(--font-display);
-      font-size: clamp(1.75rem, 5.5vw, 3.5rem);
-      font-weight: 300;
-      font-style: italic;
-      color: var(--forest);
-      line-height: 1.25;
-      position: relative;
-      padding-left: 0;
-    }
-    .philosophy-right .section-label { color: var(--sage); }
-    .philosophy-right .section-label::before { background: var(--sage); }
-    .philosophy-right h3 {
-      font-family: var(--font-display);
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      font-weight: 600;
-      color: var(--forest);
-      margin-bottom: 1.25rem;
-      line-height: 1.2;
-    }
-    .philosophy-right p {
-      font-size: 0.88rem;
-      color: #3a3530;
-      line-height: 1.85;
-      margin-bottom: 1.1rem;
-    }
-    .philosophy-right p:last-child { margin-bottom: 0; }
 
     /* ── STATS ───────────────────────────────────── */
     #stats {
-      background: var(--sage);
-      padding: 3.5rem var(--px);
-      position: relative;
-      overflow: hidden;
-    }
-    #stats::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(74,140,90,0.3) 0%, transparent 70%);
+      background: var(--green-dk);
+      padding: 3rem var(--px);
     }
     .stats-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      position: relative;
-      text-align: center;
+      gap: 0;
     }
     .stat-item {
-      padding: 2rem 1rem;
-      border-right: 1px solid rgba(243,236,224,0.15);
-      border-bottom: 1px solid rgba(243,236,224,0.1);
+      padding: 1.75rem 1rem;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.12);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
     .stat-item:nth-child(even) { border-right: none; }
     .stat-item:nth-child(3),
     .stat-item:nth-child(4) { border-bottom: none; }
     .stat-number {
-      font-family: var(--font-display);
-      font-size: clamp(2.75rem, 8vw, 5.5rem);
-      font-weight: 300;
-      color: var(--cream);
+      font-size: clamp(2.25rem, 7vw, 3.5rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.03em;
       line-height: 1;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.3rem;
     }
     .stat-number .suffix {
-      font-size: 0.6em;
-      color: var(--gold-lt);
-      vertical-align: super;
+      font-size: 0.55em;
+      color: var(--amber-lt);
     }
     .stat-label {
-      font-size: 0.62rem;
-      font-weight: 500;
-      letter-spacing: 0.16em;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: rgba(243,236,224,0.6);
+      color: rgba(255,255,255,0.6);
     }
+
+    /* ── PRICING CALLOUT ─────────────────────────── */
+    #pricing {
+      background: var(--amber);
+      padding: 2.5rem var(--px);
+      text-align: center;
+    }
+    .pricing-headline {
+      font-size: clamp(1.3rem, 4vw, 2rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.6rem;
+    }
+    .pricing-sub {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.88);
+      margin-bottom: 1.5rem;
+    }
+    .btn-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--amber);
+      background: var(--white);
+      padding: 0.85rem 1.75rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .btn-white:hover { opacity: 0.92; }
 
     /* ── PROCESS ─────────────────────────────────── */
     #process {
-      background: var(--warm-white);
-      padding: 4.5rem var(--px);
+      background: var(--off-white);
+      padding: 3.5rem var(--px);
     }
-    #process .section-label { color: var(--sage); }
-    #process .section-label::before { background: var(--sage); }
-    #process .section-heading { color: var(--forest); }
-    #process .section-heading em { color: var(--sage); }
     .process-steps {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 1.25rem;
+      gap: 1.5rem;
+      counter-reset: steps;
     }
     .process-step {
-      padding: 2rem 1.5rem;
-      border: 1px solid rgba(46,92,58,0.12);
-      border-radius: 4px;
-      transition: box-shadow 0.3s;
+      background: var(--white);
+      border: 2px solid var(--gray-100);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
     }
-    .process-step:hover { box-shadow: 0 16px 48px rgba(46,92,58,0.1); }
-    .process-ordinal {
-      font-family: var(--font-display);
-      font-size: 5rem;
-      font-weight: 300;
-      font-style: italic;
-      color: rgba(46,92,58,0.1);
-      line-height: 1;
-      margin-bottom: 0.75rem;
-    }
-    .process-step h3 {
-      font-family: var(--font-display);
-      font-size: 1.6rem;
-      font-weight: 600;
-      color: var(--forest);
-      margin-bottom: 0.65rem;
-    }
-    .process-step p {
+    .step-num {
+      width: 36px; height: 36px;
+      background: var(--green);
+      color: var(--white);
+      border-radius: 50%;
       font-size: 0.85rem;
-      color: var(--stone);
-      line-height: 1.8;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-body h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 0.35rem;
+    }
+    .step-body p {
+      font-size: 0.82rem;
+      color: var(--gray-500);
+      line-height: 1.7;
     }
 
     /* ── TESTIMONIALS ────────────────────────────── */
     #testimonials {
-      background: var(--cream);
-      padding: 4.5rem var(--px);
+      background: var(--white);
+      padding: 3.5rem var(--px);
     }
-    .testimonials-header { margin-bottom: 2.5rem; }
     .testimonials-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 1rem;
     }
     .testimonial-card {
-      background: #fff;
-      border: 1px solid rgba(46,92,58,0.1);
-      border-radius: 4px;
-      padding: 1.75rem;
-      transition: border-color 0.3s, box-shadow 0.3s;
+      background: var(--off-white);
+      border: 2px solid var(--gray-100);
+      border-radius: var(--radius);
+      padding: 1.5rem;
     }
-    .testimonial-card:hover { border-color: rgba(200,164,86,0.4); box-shadow: 0 8px 32px rgba(11,26,13,0.07); }
     .testimonial-stars {
-      color: var(--gold);
-      font-size: 0.82rem;
-      letter-spacing: 0.1em;
-      margin-bottom: 1.25rem;
+      color: #f59e0b;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
     }
     .testimonial-text {
-      font-family: var(--font-display);
-      font-size: 1.05rem;
-      font-style: italic;
-      font-weight: 300;
-      color: var(--forest);
+      font-size: 0.9rem;
+      color: var(--gray-700);
       line-height: 1.7;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.1rem;
+      font-style: italic;
     }
-    .testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+    .testimonial-author { display: flex; align-items: center; gap: 0.65rem; }
     .author-avatar {
-      width: 38px; height: 38px;
+      width: 36px; height: 36px;
       border-radius: 50%;
-      background: var(--sage);
+      background: var(--green);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: var(--font-display);
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--cream);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--white);
       flex-shrink: 0;
     }
     .author-name {
-      font-size: 0.83rem;
-      font-weight: 500;
-      color: var(--forest);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--gray-900);
     }
     .author-location {
-      font-size: 0.7rem;
-      color: var(--stone);
+      font-size: 0.72rem;
+      color: var(--gray-500);
     }
 
     /* ── SERVICE AREAS ───────────────────────────── */
     #areas {
-      background: var(--cream);
-      padding: 4.5rem var(--px);
+      background: var(--off-white);
+      padding: 3.5rem var(--px);
+      border-top: 1px solid var(--gray-300);
     }
-    #areas .section-label { color: var(--sage); }
-    #areas .section-label::before { background: var(--sage); }
-    #areas .section-heading { color: var(--forest); }
     .areas-subhead {
-      font-size: 0.92rem;
-      color: var(--stone);
-      margin-bottom: 2.5rem;
+      font-size: 0.9rem;
+      color: var(--gray-500);
+      margin-bottom: 1.75rem;
       line-height: 1.7;
     }
-    .areas-grid { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .areas-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; }
     .area-pill {
       font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      color: var(--forest);
-      background: rgba(46,92,58,0.1);
-      border: 1px solid rgba(46,92,58,0.2);
-      padding: 0.55rem 1.1rem;
+      font-weight: 600;
+      color: var(--green-dk);
+      background: var(--green-lt);
+      border: 1px solid rgba(30,107,48,0.2);
+      padding: 0.4rem 0.9rem;
       border-radius: 100px;
-      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      transition: background 0.2s, color 0.2s;
       cursor: default;
     }
     .area-pill:hover {
-      background: var(--sage);
-      color: var(--cream);
-      border-color: var(--sage);
+      background: var(--green);
+      color: var(--white);
     }
     .areas-footer {
-      margin-top: 2.5rem;
-      font-size: 0.83rem;
-      color: var(--stone);
+      margin-top: 1.75rem;
+      font-size: 0.82rem;
+      color: var(--gray-500);
     }
-    .areas-footer a { color: var(--sage); text-decoration: none; }
-    .areas-footer a:hover { text-decoration: underline; }
+    .areas-footer a { color: var(--green); text-decoration: none; font-weight: 600; }
 
     /* ── CONTACT ─────────────────────────────────── */
     #contact {
-      background: var(--forest);
-      padding: 4.5rem var(--px);
-      position: relative;
-      overflow: hidden;
+      background: var(--white);
+      padding: 3.5rem var(--px);
+      border-top: 3px solid var(--green);
     }
-    #contact::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(74,140,90,0.15) 0%, transparent 60%);
+    .contact-wrap {
+      max-width: 680px;
     }
-    .contact-inner { position: relative; max-width: 900px; margin: 0 auto; }
-    .contact-eyebrow {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 7vw, 5rem);
-      font-weight: 300;
-      color: var(--cream);
-      line-height: 1.1;
-      margin-bottom: 0.75rem;
+    .contact-heading {
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      font-weight: 800;
+      color: var(--gray-900);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
     }
-    .contact-eyebrow em { font-style: italic; color: var(--gold); }
+    .contact-heading em { font-style: normal; color: var(--green); }
     .contact-sub {
-      font-size: 0.9rem;
-      color: rgba(243,236,224,0.55);
-      margin-bottom: 2.5rem;
+      font-size: 0.88rem;
+      color: var(--gray-500);
+      margin-bottom: 2rem;
       line-height: 1.7;
     }
     .contact-form {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 0.9rem;
+      gap: 0.85rem;
     }
-    .form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.3rem; }
     .form-group.span-2 { grid-column: 1 / -1; }
     .form-group label {
-      font-size: 0.62rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: rgba(243,236,224,0.45);
+      color: var(--gray-700);
     }
     .form-group input,
     .form-group select,
     .form-group textarea {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 2px;
-      padding: 0.85rem 1rem;
+      background: var(--white);
+      border: 2px solid var(--gray-300);
+      border-radius: var(--radius);
+      padding: 0.75rem 0.9rem;
       font-size: 0.9rem;
-      color: var(--cream);
+      color: var(--gray-900);
       outline: none;
       transition: border-color 0.2s;
-      appearance: none;
       width: 100%;
       -webkit-appearance: none;
+      appearance: none;
     }
     .form-group input::placeholder,
-    .form-group textarea::placeholder { color: rgba(243,236,224,0.25); }
+    .form-group textarea::placeholder { color: var(--gray-300); }
     .form-group input:focus,
     .form-group select:focus,
-    .form-group textarea:focus { border-color: var(--gold); }
-    .form-group select option { background: var(--forest-mid); color: var(--cream); }
-    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-group textarea:focus { border-color: var(--green); }
+    .form-group select option { background: var(--white); color: var(--gray-900); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
     .form-submit {
       grid-column: 1 / -1;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 0.75rem;
       margin-top: 0.25rem;
     }
     .btn-submit {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--forest);
-      background: var(--gold);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--white);
+      background: var(--green);
       border: none;
-      padding: 1.05rem 2rem;
-      border-radius: 2px;
+      padding: 1rem 1.75rem;
+      border-radius: var(--radius);
       cursor: pointer;
       transition: background 0.2s;
-      text-align: center;
     }
-    .btn-submit:hover { background: var(--gold-lt); }
+    .btn-submit:hover { background: var(--green-mid); }
     .form-alt {
-      font-size: 0.82rem;
-      color: rgba(243,236,224,0.4);
-      text-align: center;
+      font-size: 0.8rem;
+      color: var(--gray-500);
     }
-    .form-alt a { color: var(--gold); text-decoration: none; }
+    .form-alt a { color: var(--amber); font-weight: 700; text-decoration: none; }
 
     /* ── FOOTER ──────────────────────────────────── */
     footer {
-      background: var(--ink);
-      padding: 3rem var(--px) 2rem;
-      border-top: 1px solid rgba(255,255,255,0.05);
+      background: var(--gray-900);
+      padding: 2.5rem var(--px) 1.5rem;
     }
     .footer-top {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 2.5rem;
-      margin-bottom: 3rem;
+      gap: 2rem;
+      margin-bottom: 2rem;
     }
-    .footer-brand .nav-logo {
-      font-size: 1.35rem;
+    .footer-logo {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--white);
+      text-decoration: none;
       display: block;
-      margin-bottom: 0.85rem;
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.02em;
     }
+    .footer-logo span { color: var(--amber-lt); }
     .footer-brand p {
-      font-size: 0.8rem;
-      color: rgba(243,236,224,0.4);
-      line-height: 1.75;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.7;
     }
     .footer-cols {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+      gap: 1.5rem;
     }
     .footer-col h4 {
-      font-size: 0.6rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: rgba(243,236,224,0.35);
-      margin-bottom: 1rem;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 0.75rem;
     }
     .footer-col ul { list-style: none; }
-    .footer-col ul li { margin-bottom: 0.6rem; }
+    .footer-col ul li { margin-bottom: 0.5rem; }
     .footer-col ul a {
-      font-size: 0.83rem;
-      color: rgba(243,236,224,0.55);
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.6);
       text-decoration: none;
       transition: color 0.2s;
     }
-    .footer-col ul a:hover { color: var(--gold); }
+    .footer-col ul a:hover { color: var(--white); }
     .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding-top: 1.75rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1.25rem;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 0.75rem;
       align-items: center;
       text-align: center;
     }
     .footer-bottom p {
-      font-size: 0.72rem;
-      color: rgba(243,236,224,0.25);
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.25);
     }
-    .footer-socials { display: flex; gap: 0.75rem; }
+    .footer-socials { display: flex; gap: 0.6rem; }
     .social-icon {
-      width: 34px; height: 34px;
-      border: 1px solid rgba(255,255,255,0.1);
+      width: 32px; height: 32px;
+      border: 1px solid rgba(255,255,255,0.15);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: rgba(243,236,224,0.4);
+      color: rgba(255,255,255,0.4);
       transition: border-color 0.2s, color 0.2s;
       text-decoration: none;
     }
-    .social-icon:hover { border-color: var(--gold); color: var(--gold); }
+    .social-icon:hover { border-color: var(--amber-lt); color: var(--amber-lt); }
 
-    /* ── REVEAL ANIMATIONS ───────────────────────── */
-    .reveal { opacity: 0; transform: translateY(24px); }
+    /* ── REVEAL ──────────────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(20px); }
     .reveal.is-visible {
       opacity: 1; transform: translateY(0);
-      transition: opacity 0.7s ease, transform 0.7s ease;
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
     .reveal-delay-1 { transition-delay: 0.1s; }
     .reveal-delay-2 { transition-delay: 0.2s; }
@@ -778,65 +711,89 @@
     /* ── TABLET 600px+ ───────────────────────────── */
     @media (min-width: 600px) {
       :root { --px: 2rem; }
+      .hero-actions { flex-direction: row; align-items: center; }
+      .why-grid { grid-template-columns: repeat(4, 1fr); }
       .services-grid { grid-template-columns: 1fr 1fr; }
       .process-steps { grid-template-columns: 1fr 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr 1fr; }
       .footer-top { grid-template-columns: 1fr 1fr; }
       .footer-cols { grid-template-columns: repeat(3, 1fr); }
       .contact-form { grid-template-columns: 1fr 1fr; }
       .form-submit { flex-direction: row; align-items: center; }
-      .btn-submit { text-align: left; }
-      .form-alt { text-align: left; }
+      .footer-bottom { flex-direction: row; justify-content: space-between; text-align: left; }
     }
 
     /* ── DESKTOP 960px+ ──────────────────────────── */
     @media (min-width: 960px) {
-      :root { --px: 3rem; }
-
-      nav { padding: 1.25rem var(--px); }
+      :root { --px: 3.5rem; }
+      nav { padding: 1rem var(--px); }
       .nav-links { display: flex; }
       .nav-mobile-cta { display: none; }
-
       #hero {
-        padding: 10rem var(--px) 6rem;
-        min-height: 100vh;
+        padding: 7rem var(--px) 4.5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
       }
-      .hero-botanical { display: block; }
-      .hero-actions { flex-direction: row; align-items: center; gap: 2rem; }
-
-      #services, #testimonials { padding: 8rem var(--px); }
-      #philosophy { padding: 8rem var(--px); grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
-      .philosophy-quote { padding-left: 1.5rem; }
-      .philosophy-quote::before {
-        content: '\201C';
-        position: absolute;
-        top: -1rem; left: -1.5rem;
-        font-size: 8rem;
-        color: rgba(200,164,86,0.18);
-        font-family: var(--font-display);
-        line-height: 1;
+      .hero-right {
+        background: var(--green-lt);
+        border: 2px solid rgba(30,107,48,0.15);
+        border-radius: 12px;
+        padding: 2rem;
       }
-      #stats { padding: 7rem var(--px); }
+      .hero-right-heading {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--green-dk);
+        margin-bottom: 1rem;
+      }
+      .hero-checklist {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+      }
+      .hero-checklist li {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 0.88rem;
+        color: var(--gray-700);
+        font-weight: 500;
+      }
+      .hero-checklist .check-icon {
+        width: 20px; height: 20px;
+        background: var(--green);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        color: white;
+        font-size: 0.65rem;
+      }
+      #services { padding: 5rem var(--px); }
+      .services-grid { grid-template-columns: repeat(3, 1fr); }
+      #stats { padding: 4rem var(--px); }
       .stats-grid {
         grid-template-columns: repeat(4, 1fr);
       }
       .stat-item {
-        border-right: 1px solid rgba(243,236,224,0.15);
+        border-right: 1px solid rgba(255,255,255,0.12);
         border-bottom: none;
-        padding: 2rem;
+        padding: 1.5rem 2rem;
       }
-      .stat-item:nth-child(even) { border-right: 1px solid rgba(243,236,224,0.15); }
+      .stat-item:nth-child(even) { border-right: 1px solid rgba(255,255,255,0.12); }
       .stat-item:last-child { border-right: none; }
-      #process { padding: 8rem var(--px); }
-      .process-steps { grid-template-columns: repeat(3, 1fr); gap: 3rem; }
-      .service-card { padding: 3rem 2.5rem; }
-      #areas { padding: 8rem var(--px); }
-      #contact { padding: 8rem var(--px); }
-      footer { padding: 5rem var(--px) 2.5rem; }
+      #process { padding: 5rem var(--px); }
+      .process-steps { grid-template-columns: repeat(3, 1fr); }
+      #testimonials { padding: 5rem var(--px); }
+      .testimonials-grid { grid-template-columns: repeat(3, 1fr); }
+      #areas { padding: 5rem var(--px); }
+      #contact { padding: 5rem var(--px); }
+      footer { padding: 3.5rem var(--px) 2rem; }
       .footer-top { grid-template-columns: 2fr 2fr; gap: 4rem; }
-      .footer-cols { grid-template-columns: repeat(3, 1fr); }
-      .footer-bottom { flex-direction: row; justify-content: space-between; text-align: left; }
-      .testimonials-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-      .section-heading { margin-bottom: 4rem; }
     }
   </style>
 </head>
@@ -847,167 +804,160 @@
   <a href="#" class="nav-logo">Estate<span>Mate</span></a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
-    <li><a href="#philosophy">About</a></li>
+    <li><a href="#process">How It Works</a></li>
     <li><a href="#areas">Areas</a></li>
-    <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+    <li><a href="#contact" class="nav-cta">Get Free Estimate</a></li>
   </ul>
+  <a href="#contact" class="nav-mobile-cta">Free Estimate</a>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-bg"></div>
-
-  <!-- Botanical SVG -->
-  <svg class="hero-botanical" viewBox="0 0 600 700" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- Large palm fronds / grass blades -->
-    <path d="M300 680 C280 500 150 400 50 200" stroke="#4a8c5a" stroke-width="3" stroke-linecap="round" fill="none"/>
-    <path d="M300 680 C320 490 460 370 560 180" stroke="#4a8c5a" stroke-width="3" stroke-linecap="round" fill="none"/>
-    <path d="M300 680 C290 500 200 380 100 300" stroke="#3a6947" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-    <path d="M300 680 C310 500 400 360 500 260" stroke="#3a6947" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-    <path d="M300 680 C295 520 240 420 160 350" stroke="#5a9968" stroke-width="2" stroke-linecap="round" fill="none"/>
-    <path d="M300 680 C305 520 360 400 440 310" stroke="#5a9968" stroke-width="2" stroke-linecap="round" fill="none"/>
-    <!-- Leaf shapes -->
-    <ellipse cx="120" cy="230" rx="70" ry="28" fill="#2e5c3a" transform="rotate(-30 120 230)"/>
-    <ellipse cx="480" cy="200" rx="65" ry="25" fill="#2e5c3a" transform="rotate(25 480 200)"/>
-    <ellipse cx="200" cy="340" rx="55" ry="20" fill="#3a6947" transform="rotate(-15 200 340)"/>
-    <ellipse cx="400" cy="300" rx="55" ry="20" fill="#3a6947" transform="rotate(15 400 300)"/>
-    <!-- Small detail leaves -->
-    <ellipse cx="80" cy="180" rx="35" ry="13" fill="#4a7c59" transform="rotate(-40 80 180)"/>
-    <ellipse cx="520" cy="165" rx="32" ry="12" fill="#4a7c59" transform="rotate(35 520 165)"/>
-    <circle cx="300" cy="680" r="18" fill="#1a2e1c"/>
-    <!-- Grass texture dots -->
-    <circle cx="150" cy="460" r="3" fill="#4a8c5a" opacity="0.5"/>
-    <circle cx="450" cy="420" r="3" fill="#4a8c5a" opacity="0.5"/>
-    <circle cx="200" cy="550" r="2" fill="#4a8c5a" opacity="0.4"/>
-    <circle cx="400" cy="520" r="2" fill="#4a8c5a" opacity="0.4"/>
-  </svg>
-
-  <div class="hero-badge">Serving Central Texas Since 2012</div>
-
-  <h1 class="hero-heading">
-    <span class="line size-xl"><span class="word">Your Estate,</span></span>
-    <span class="line size-italic"><span class="word">Immaculately</span></span>
-    <span class="line size-sub"><span class="word">Kept.</span></span>
-  </h1>
-
-  <p class="hero-body">
-    Premium landscaping and lawn care for Central Texas properties. From weekly maintenance to full landscape transformations — we treat your land like it's our own.
-  </p>
-
-  <div class="hero-actions">
-    <a href="#contact" class="btn-primary">
-      Request a Free Quote
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
-    <a href="tel:5125551526" class="hero-phone">or call (512) 555-LAWN</a>
+  <div class="hero-left">
+    <div class="hero-eyebrow">Central Texas Lawn Care</div>
+    <h1 class="hero-heading">
+      Great Lawn.<br>
+      <em>Fair Price.</em><br>
+      Every Week.
+    </h1>
+    <p class="hero-body">
+      We show up on time, do the job right, and don't lock you into long contracts. Reliable lawn care and landscaping for homeowners across Central Texas.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">
+        Get a Free Estimate
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="tel:5125551526" class="btn-secondary">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 12 19.79 19.79 0 01.88 3.4 2 2 0 012.87 1.22h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.05-1.05a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        (512) 555-LAWN
+      </a>
+    </div>
+    <div class="hero-trust">
+      <span class="trust-badge"><span class="check">✓</span> Licensed &amp; Insured</span>
+      <span class="trust-badge"><span class="check">✓</span> No Contracts</span>
+      <span class="trust-badge"><span class="check">✓</span> Free Estimates</span>
+      <span class="trust-badge"><span class="check">✓</span> Same Crew Every Time</span>
+      <span class="trust-badge"><span class="check">✓</span> Satisfaction Guaranteed</span>
+    </div>
   </div>
-
-  <div class="hero-scroll-line">Scroll to explore</div>
+  <div class="hero-right" style="display:none">
+    <p class="hero-right-heading">Why homeowners choose us:</p>
+    <ul class="hero-checklist">
+      <li><span class="check-icon">✓</span> Flat monthly pricing — no surprises</li>
+      <li><span class="check-icon">✓</span> Free estimates within 24 hours</li>
+      <li><span class="check-icon">✓</span> No long-term contracts required</li>
+      <li><span class="check-icon">✓</span> Same crew assigned to your property</li>
+      <li><span class="check-icon">✓</span> Text confirmations before every visit</li>
+      <li><span class="check-icon">✓</span> Satisfaction guaranteed, period</li>
+    </ul>
+  </div>
 </section>
 
 <!-- MARQUEE -->
 <div class="marquee-strip">
   <div class="marquee-track">
-    <span class="marquee-item">Lawn Maintenance <span class="dot">·</span></span>
+    <span class="marquee-item">Lawn Mowing <span class="dot">·</span></span>
+    <span class="marquee-item">Edging &amp; Trimming <span class="dot">·</span></span>
     <span class="marquee-item">Landscape Design <span class="dot">·</span></span>
-    <span class="marquee-item">Irrigation Systems <span class="dot">·</span></span>
+    <span class="marquee-item">Irrigation Repair <span class="dot">·</span></span>
     <span class="marquee-item">Hardscaping <span class="dot">·</span></span>
-    <span class="marquee-item">Tree & Shrub Care <span class="dot">·</span></span>
+    <span class="marquee-item">Tree &amp; Shrub Care <span class="dot">·</span></span>
     <span class="marquee-item">Seasonal Cleanup <span class="dot">·</span></span>
     <span class="marquee-item">Sod Installation <span class="dot">·</span></span>
-    <span class="marquee-item">Lawn Maintenance <span class="dot">·</span></span>
+    <span class="marquee-item">Lawn Mowing <span class="dot">·</span></span>
+    <span class="marquee-item">Edging &amp; Trimming <span class="dot">·</span></span>
     <span class="marquee-item">Landscape Design <span class="dot">·</span></span>
-    <span class="marquee-item">Irrigation Systems <span class="dot">·</span></span>
+    <span class="marquee-item">Irrigation Repair <span class="dot">·</span></span>
     <span class="marquee-item">Hardscaping <span class="dot">·</span></span>
-    <span class="marquee-item">Tree & Shrub Care <span class="dot">·</span></span>
+    <span class="marquee-item">Tree &amp; Shrub Care <span class="dot">·</span></span>
     <span class="marquee-item">Seasonal Cleanup <span class="dot">·</span></span>
     <span class="marquee-item">Sod Installation <span class="dot">·</span></span>
   </div>
 </div>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="section-label reveal">001 / Services</div>
-  <h2 class="section-heading reveal reveal-delay-1">Every inch,<br><em>tended with intention.</em></h2>
-
-  <div class="services-grid">
-    <div class="service-card reveal">
-      <div class="service-num">01</div>
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-        <path d="M20 35 V10 M10 20 C10 12 15 8 20 10 C25 8 30 12 30 20"/>
-        <path d="M8 28 C12 22 16 24 20 20 C24 24 28 22 32 28"/>
-      </svg>
-      <div class="service-name">Lawn Maintenance</div>
-      <p class="service-desc">Weekly and bi-weekly mowing, edging, trimming, and blowing. Consistent, professional, on schedule — every time.</p>
+<!-- WHY BAR -->
+<section id="why-bar">
+  <div class="why-grid">
+    <div class="why-item reveal">
+      <div class="why-icon">📅</div>
+      <div>
+        <h4>We Show Up</h4>
+        <p>Consistent schedule, every week. No excuses.</p>
+      </div>
     </div>
-    <div class="service-card reveal reveal-delay-1">
-      <div class="service-num">02</div>
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-        <rect x="6" y="14" width="28" height="18" rx="2"/>
-        <path d="M6 20 h28 M14 14 V10 M26 14 V10"/>
-        <circle cx="20" cy="26" r="3"/>
-      </svg>
-      <div class="service-name">Landscape Design</div>
-      <p class="service-desc">Full-service design consultations transforming bare yards into curated outdoor living spaces built for Texas climates.</p>
+    <div class="why-item reveal reveal-delay-1">
+      <div class="why-icon">💰</div>
+      <div>
+        <h4>Flat Pricing</h4>
+        <p>Know your cost upfront. No hidden fees.</p>
+      </div>
     </div>
-    <div class="service-card reveal reveal-delay-2">
-      <div class="service-num">03</div>
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-        <circle cx="20" cy="20" r="10"/>
-        <path d="M20 10 V6 M20 34 V30 M10 20 H6 M34 20 H30"/>
-        <path d="M14 20 C14 16.7 16.7 14 20 14"/>
-      </svg>
-      <div class="service-name">Irrigation Systems</div>
-      <p class="service-desc">Smart sprinkler installation, repair, and seasonal tune-ups. Maximize water efficiency across every zone of your property.</p>
+    <div class="why-item reveal reveal-delay-2">
+      <div class="why-icon">🤝</div>
+      <div>
+        <h4>No Contracts</h4>
+        <p>Month-to-month. Cancel any time, no hassle.</p>
+      </div>
     </div>
-    <div class="service-card reveal">
-      <div class="service-num">04</div>
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-        <path d="M20 8 L20 28 M14 14 C14 10 20 8 20 8 C20 8 26 10 26 14"/>
-        <path d="M10 28 h20 M8 32 h24"/>
-        <path d="M12 20 C12 16 16 14 20 16"/>
-      </svg>
-      <div class="service-name">Tree & Shrub Care</div>
-      <p class="service-desc">Pruning, shaping, deep root fertilization, and seasonal trimming to keep your mature trees and hedges healthy and beautiful.</p>
-    </div>
-    <div class="service-card reveal reveal-delay-1">
-      <div class="service-num">05</div>
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-        <rect x="8" y="8" width="10" height="10" rx="1"/>
-        <rect x="22" y="8" width="10" height="10" rx="1"/>
-        <rect x="8" y="22" width="10" height="10" rx="1"/>
-        <rect x="22" y="22" width="10" height="10" rx="1"/>
-      </svg>
-      <div class="service-name">Hardscaping</div>
-      <p class="service-desc">Patios, walkways, retaining walls, and decorative stone work. Structural outdoor elements built to last in Central Texas soil.</p>
-    </div>
-    <div class="service-card reveal reveal-delay-2">
-      <div class="service-num">06</div>
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-        <path d="M6 32 L14 16 L20 24 L26 12 L34 32"/>
-        <path d="M6 32 h28"/>
-      </svg>
-      <div class="service-name">Seasonal Cleanup</div>
-      <p class="service-desc">Spring prep, fall leaf removal, winter readiness, and summer scalp treatments to keep your property pristine year-round.</p>
+    <div class="why-item reveal reveal-delay-3">
+      <div class="why-icon">⭐</div>
+      <div>
+        <h4>4.9 Stars</h4>
+        <p>500+ happy homeowners across Central Texas.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- PHILOSOPHY -->
-<section id="philosophy">
-  <div class="philosophy-left reveal">
-    <blockquote class="philosophy-quote">
-      We don't just mow lawns. We steward the land you've worked hard to own.
-    </blockquote>
-  </div>
-  <div class="philosophy-right reveal reveal-delay-2">
-    <div class="section-label">002 / Our Philosophy</div>
-    <h3>Central Texas roots. Estate-level standards.</h3>
-    <p>Estate Mate was founded in Austin in 2012 by a team that believed Central Texas homeowners deserved better — not just a crew with a mower, but craftsmen who understood the land, the climate, and the plants that thrive here.</p>
-    <p>We work with property owners across the Hill Country, the Suburbs, and the urban core to maintain, transform, and protect the outdoor spaces that surround the places people call home.</p>
-    <p>Every plan is custom. Every visit is staffed by our own trained employees — not subcontractors. And we back every job with a satisfaction guarantee.</p>
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-label reveal">Our Services</div>
+  <h2 class="section-heading reveal reveal-delay-1">Everything your yard needs,<br>all in one place.</h2>
+
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 35V10M10 20C10 12 15 8 20 10C25 8 30 12 30 20"/><path d="M8 28C12 22 16 24 20 20C24 24 28 22 32 28"/></svg>
+      </div>
+      <div class="service-name">Lawn Mowing &amp; Maintenance</div>
+      <p class="service-desc">Weekly or bi-weekly mowing, edging, trimming, and cleanup. On schedule, every time.</p>
+    </div>
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="6" y="14" width="28" height="18" rx="2"/><path d="M6 20h28M14 14V10M26 14V10"/><circle cx="20" cy="26" r="3"/></svg>
+      </div>
+      <div class="service-name">Landscape Design</div>
+      <p class="service-desc">Transform your yard into something you're proud of. Custom plans for any budget.</p>
+    </div>
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="20" cy="20" r="10"/><path d="M20 10V6M20 34V30M10 20H6M34 20H30"/><path d="M14 20C14 16.7 16.7 14 20 14"/></svg>
+      </div>
+      <div class="service-name">Irrigation &amp; Sprinklers</div>
+      <p class="service-desc">Installation, repair, and seasonal tune-ups. We'll save you money on your water bill.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 8L20 28M14 14C14 10 20 8 20 8C20 8 26 10 26 14"/><path d="M10 28h20M8 32h24"/></svg>
+      </div>
+      <div class="service-name">Tree &amp; Shrub Care</div>
+      <p class="service-desc">Pruning, shaping, and fertilization to keep your trees and hedges healthy.</p>
+    </div>
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="8" y="8" width="10" height="10" rx="1"/><rect x="22" y="8" width="10" height="10" rx="1"/><rect x="8" y="22" width="10" height="10" rx="1"/><rect x="22" y="22" width="10" height="10" rx="1"/></svg>
+      </div>
+      <div class="service-name">Hardscaping</div>
+      <p class="service-desc">Patios, walkways, retaining walls, and stone work built to last in Central Texas.</p>
+    </div>
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 32L14 16L20 24L26 12L34 32"/><path d="M6 32h28"/></svg>
+      </div>
+      <div class="service-name">Seasonal Cleanup</div>
+      <p class="service-desc">Spring prep, fall leaf removal, and winter readiness — we handle the dirty work.</p>
+    </div>
   </div>
 </section>
 
@@ -1016,60 +966,71 @@
   <div class="stats-grid">
     <div class="stat-item reveal">
       <div class="stat-number"><span class="counter" data-target="500">0</span><span class="suffix">+</span></div>
-      <div class="stat-label">Properties Managed</div>
+      <div class="stat-label">Properties Served</div>
     </div>
     <div class="stat-item reveal reveal-delay-1">
-      <div class="stat-number"><span class="counter" data-target="12">0</span><span class="suffix">+</span></div>
-      <div class="stat-label">Years Serving Central Texas</div>
+      <div class="stat-number"><span class="counter" data-target="12">0</span><span class="suffix">+ yrs</span></div>
+      <div class="stat-label">In Business</div>
     </div>
     <div class="stat-item reveal reveal-delay-2">
       <div class="stat-number"><span class="counter" data-target="25">0</span><span class="suffix">+</span></div>
-      <div class="stat-label">Cities & Neighborhoods</div>
+      <div class="stat-label">Cities Covered</div>
     </div>
     <div class="stat-item reveal reveal-delay-3">
       <div class="stat-number"><span class="counter" data-target="49">0</span><span class="suffix">&thinsp;★</span></div>
-      <div class="stat-label" style="position:relative;top:-2px;">Average Client Rating</div>
+      <div class="stat-label">Avg. Rating</div>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
+<!-- PRICING CALLOUT -->
+<section id="pricing">
+  <p class="pricing-headline">Estimates are always free. Quotes in 24 hours.</p>
+  <p class="pricing-sub">No pressure, no contracts. Just honest pricing for your property.</p>
+  <a href="#contact" class="btn-white">
+    Request My Free Estimate →
+  </a>
+</section>
+
+<!-- HOW IT WORKS -->
 <section id="process">
-  <div class="section-label reveal">003 / How It Works</div>
-  <h2 class="section-heading reveal reveal-delay-1">Simple process.<br><em>Stunning results.</em></h2>
+  <div class="section-label reveal">How It Works</div>
+  <h2 class="section-heading reveal reveal-delay-1">Up and running in 3 easy steps.</h2>
 
   <div class="process-steps">
     <div class="process-step reveal">
-      <div class="process-ordinal">01</div>
-      <h3>Free Consultation</h3>
-      <p>We visit your property, walk every inch, listen to what you need, and assess what's possible. No obligation. No pressure. Just honest conversation about your land.</p>
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h3>Get a Free Estimate</h3>
+        <p>Fill out our form or give us a call. We'll visit your property and send you a flat-rate quote within 24 hours — no obligation.</p>
+      </div>
     </div>
     <div class="process-step reveal reveal-delay-1">
-      <div class="process-ordinal">02</div>
-      <h3>Custom Plan</h3>
-      <p>We build a scope of work tailored to your property's size, style, and seasonal demands — with transparent pricing before a single blade of grass is cut.</p>
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h3>Pick Your Schedule</h3>
+        <p>Weekly, bi-weekly, or one-time — you choose what works for your yard and your budget. No contracts required.</p>
+      </div>
     </div>
     <div class="process-step reveal reveal-delay-2">
-      <div class="process-ordinal">03</div>
-      <h3>Flawless Execution</h3>
-      <p>Our crews show up on time, in uniform, with professional equipment. We work, we clean up, and we leave your property looking exactly as promised.</p>
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h3>We Handle the Rest</h3>
+        <p>Your crew shows up on time, does the job right, and sends you a confirmation when it's done. Simple as that.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- TESTIMONIALS -->
 <section id="testimonials">
-  <div class="testimonials-header">
-    <div>
-      <div class="section-label reveal">004 / Testimonials</div>
-      <h2 class="section-heading reveal reveal-delay-1" style="margin-bottom:0;">What our clients say.</h2>
-    </div>
-  </div>
+  <div class="section-label reveal">Customer Reviews</div>
+  <h2 class="section-heading reveal reveal-delay-1">What our neighbors are saying.</h2>
 
   <div class="testimonials-grid">
     <div class="testimonial-card reveal">
       <div class="testimonial-stars">★★★★★</div>
-      <p class="testimonial-text">"Estate Mate transformed our backyard from a patchy mess into something we're actually proud to show off. They're meticulous, professional, and show up every week like clockwork."</p>
+      <p class="testimonial-text">"They show up every single week without fail. My yard has never looked this good and the price is way better than the other guys I tried. Highly recommend."</p>
       <div class="testimonial-author">
         <div class="author-avatar">JM</div>
         <div>
@@ -1080,7 +1041,7 @@
     </div>
     <div class="testimonial-card reveal reveal-delay-1">
       <div class="testimonial-stars">★★★★★</div>
-      <p class="testimonial-text">"After two other companies let us down, Estate Mate has been a breath of fresh air. They actually communicate, they're on time, and the yard looks incredible every week."</p>
+      <p class="testimonial-text">"After two other companies flaked on me, Estate Mate has been rock solid. On time, professional, and they actually communicate. Worth every penny."</p>
       <div class="testimonial-author">
         <div class="author-avatar">SR</div>
         <div>
@@ -1091,7 +1052,7 @@
     </div>
     <div class="testimonial-card reveal reveal-delay-2">
       <div class="testimonial-stars">★★★★★</div>
-      <p class="testimonial-text">"We hired Estate Mate for a full landscape redesign — new irrigation, native plantings, stone path, the works. It came in on budget and on time. We couldn't be happier."</p>
+      <p class="testimonial-text">"Got quotes from 4 companies. Estate Mate was honest, fair, and didn't try to upsell me on stuff I didn't need. The work came out great."</p>
       <div class="testimonial-author">
         <div class="author-avatar">DK</div>
         <div>
@@ -1105,9 +1066,9 @@
 
 <!-- SERVICE AREAS -->
 <section id="areas">
-  <div class="section-label reveal">005 / Service Areas</div>
-  <h2 class="section-heading reveal reveal-delay-1">Where we work.</h2>
-  <p class="areas-subhead reveal reveal-delay-2">Proudly serving Central Texas from Austin to the Hill Country — and everywhere in between.</p>
+  <div class="section-label reveal">Service Areas</div>
+  <h2 class="section-heading reveal reveal-delay-1">We serve all of Central Texas.</h2>
+  <p class="areas-subhead reveal reveal-delay-2">Based in Austin — serving the whole metro and beyond.</p>
 
   <div class="areas-grid reveal reveal-delay-3">
     <span class="area-pill">Austin</span>
@@ -1128,18 +1089,18 @@
     <span class="area-pill">San Marcos</span>
   </div>
 
-  <p class="areas-footer reveal">Not sure if we serve your area? <a href="#contact">Contact us</a> — we cover more ground than you'd expect.</p>
+  <p class="areas-footer reveal">Not on the list? <a href="#contact">Ask us</a> — we cover more ground than you'd expect.</p>
 </section>
 
-<!-- CONTACT / CTA -->
+<!-- CONTACT -->
 <section id="contact">
-  <div class="contact-inner">
-    <h2 class="contact-eyebrow reveal">Ready to transform<br><em>your property?</em></h2>
-    <p class="contact-sub reveal reveal-delay-1">Fill out the form below and we'll reach out within one business day to schedule your free consultation.</p>
+  <div class="contact-wrap">
+    <h2 class="contact-heading reveal">Get your free estimate<br><em>today.</em></h2>
+    <p class="contact-sub reveal reveal-delay-1">Fill out the form and we'll get back to you within one business day — usually same day.</p>
 
     <form class="contact-form reveal reveal-delay-2" onsubmit="handleSubmit(event)">
       <div class="form-group">
-        <label>Full Name</label>
+        <label>Your Name</label>
         <input type="text" placeholder="John Smith" required>
       </div>
       <div class="form-group">
@@ -1151,30 +1112,30 @@
         <input type="tel" placeholder="(512) 555-0100">
       </div>
       <div class="form-group">
-        <label>Property City</label>
+        <label>City / Neighborhood</label>
         <input type="text" placeholder="Georgetown, TX">
       </div>
       <div class="form-group span-2">
-        <label>Service Interested In</label>
+        <label>What Do You Need?</label>
         <select>
-          <option value="">Select a service…</option>
-          <option>Lawn Maintenance (Weekly/Bi-Weekly)</option>
-          <option>Landscape Design & Renovation</option>
+          <option value="">Pick a service…</option>
+          <option>Weekly / Bi-Weekly Lawn Mowing</option>
+          <option>Landscape Design &amp; Installation</option>
           <option>Irrigation Installation or Repair</option>
-          <option>Tree & Shrub Care</option>
-          <option>Hardscaping (Patios, Walkways)</option>
+          <option>Tree &amp; Shrub Trimming</option>
+          <option>Hardscaping (Patio, Walkway, Wall)</option>
           <option>Seasonal Cleanup</option>
           <option>Full-Service Package</option>
-          <option>Not sure — need a consultation</option>
+          <option>Not sure — just need a quote</option>
         </select>
       </div>
       <div class="form-group span-2">
-        <label>Tell us about your property</label>
-        <textarea placeholder="Property size, current condition, what you're hoping to achieve…"></textarea>
+        <label>Anything else we should know?</label>
+        <textarea placeholder="Yard size, what's going on, what you're hoping to fix…"></textarea>
       </div>
       <div class="form-submit">
         <button type="submit" class="btn-submit">Send My Request →</button>
-        <span class="form-alt">Or call us at <a href="tel:5125551526">(512) 555-LAWN</a></span>
+        <span class="form-alt">Or call us: <a href="tel:5125551526">(512) 555-LAWN</a></span>
       </div>
     </form>
   </div>
@@ -1184,76 +1145,69 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <a href="#" class="nav-logo">Estate<span>Mate</span></a>
-      <p>Premium landscaping and lawn care services for Central Texas properties. Licensed, insured, and backed by a satisfaction guarantee.</p>
+      <a href="#" class="footer-logo">Estate<span>Mate</span></a>
+      <p>Reliable lawn care and landscaping for Central Texas homeowners. Licensed, insured, and satisfaction guaranteed.</p>
     </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <ul>
-        <li><a href="#services">Lawn Maintenance</a></li>
-        <li><a href="#services">Landscape Design</a></li>
-        <li><a href="#services">Irrigation</a></li>
-        <li><a href="#services">Hardscaping</a></li>
-        <li><a href="#services">Tree Care</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <ul>
-        <li><a href="#philosophy">About Us</a></li>
-        <li><a href="#process">How It Works</a></li>
-        <li><a href="#testimonials">Reviews</a></li>
-        <li><a href="#areas">Service Areas</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <ul>
-        <li><a href="tel:5125551526">(512) 555-LAWN</a></li>
-        <li><a href="mailto:hello@estatemate.com">hello@estatemate.com</a></li>
-        <li><a href="#contact">Free Quote</a></li>
-      </ul>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Lawn Mowing</a></li>
+          <li><a href="#services">Landscape Design</a></li>
+          <li><a href="#services">Irrigation</a></li>
+          <li><a href="#services">Hardscaping</a></li>
+          <li><a href="#services">Tree Care</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#why-bar">Why Us</a></li>
+          <li><a href="#process">How It Works</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#areas">Service Areas</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:5125551526">(512) 555-LAWN</a></li>
+          <li><a href="mailto:hello@estatemate.com">hello@estatemate.com</a></li>
+          <li><a href="#contact">Free Estimate</a></li>
+        </ul>
+      </div>
     </div>
   </div>
   <div class="footer-bottom">
     <p>© 2024 Estate Mate, LLC. Central Texas. All rights reserved.</p>
     <div class="footer-socials">
       <a href="#" class="social-icon" aria-label="Facebook">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
       </a>
       <a href="#" class="social-icon" aria-label="Instagram">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
       </a>
       <a href="#" class="social-icon" aria-label="Google">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21.35 11.1h-9.17v2.73h6.51c-.33 3.81-3.5 5.44-6.5 5.44C8.36 19.27 5 16.25 5 12c0-4.1 3.2-7.27 7.2-7.27 3.09 0 4.9 1.97 4.9 1.97L19 4.72S16.56 2 12.1 2C6.42 2 2.03 6.8 2.03 12c0 5.05 4.13 10 10.22 10 5.35 0 9.25-3.67 9.25-9.09 0-1.15-.15-1.81-.15-1.81z"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M21.35 11.1h-9.17v2.73h6.51c-.33 3.81-3.5 5.44-6.5 5.44C8.36 19.27 5 16.25 5 12c0-4.1 3.2-7.27 7.2-7.27 3.09 0 4.9 1.97 4.9 1.97L19 4.72S16.56 2 12.1 2C6.42 2 2.03 6.8 2.03 12c0 5.05 4.13 10 10.22 10 5.35 0 9.25-3.67 9.25-9.09 0-1.15-.15-1.81-.15-1.81z"/></svg>
       </a>
     </div>
   </div>
 </footer>
 
 <script>
+  /* ── HERO ANIMATIONS ──────────────────────────── */
   gsap.registerPlugin(ScrollTrigger);
+  const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
+  tl.to('.hero-eyebrow', { opacity: 1, y: 0, duration: 0.5, delay: 0.2 })
+    .to('.hero-heading',  { opacity: 1, y: 0, duration: 0.6 }, '-=0.2')
+    .to('.hero-body',     { opacity: 1, y: 0, duration: 0.5 }, '-=0.3')
+    .to('.hero-actions',  { opacity: 1, y: 0, duration: 0.5 }, '-=0.3')
+    .to('.hero-trust',    { opacity: 1, y: 0, duration: 0.5 }, '-=0.2');
 
-  /* ── NAV SCROLL ─────────────────────────────── */
-  const nav = document.getElementById('mainNav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 60);
-  });
-
-  /* ── HERO ANIMATION ─────────────────────────── */
-  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-
-  tl.to('.hero-badge', { opacity: 1, y: 0, duration: 0.6, delay: 0.3 })
-    .to('.hero-heading .word', {
-      opacity: 1,
-      y: 0,
-      duration: 0.9,
-      stagger: 0.18,
-      ease: 'power4.out'
-    }, '-=0.2')
-    .to('.hero-body', { opacity: 1, y: 0, duration: 0.7 }, '-=0.4')
-    .to('.hero-actions', { opacity: 1, y: 0, duration: 0.7 }, '-=0.5')
-    .to('.hero-scroll-line', { opacity: 1, duration: 0.6 }, '-=0.3');
+  /* Show hero-right panel on desktop */
+  if (window.innerWidth >= 960) {
+    document.querySelector('.hero-right').style.display = 'block';
+  }
 
   /* ── SCROLL REVEAL ──────────────────────────── */
   const revealObserver = new IntersectionObserver((entries) => {
@@ -1263,30 +1217,26 @@
         revealObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12 });
-
+  }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-  /* ── COUNTER ANIMATION ──────────────────────── */
+  /* ── COUNTER ────────────────────────────────── */
   function animateCounter(el) {
     const target = parseInt(el.dataset.target, 10);
     const isDec = target === 49;
-    const duration = 1800;
+    const duration = 1600;
     const start = performance.now();
-
     const update = (now) => {
-      const elapsed = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - elapsed, 3);
-      const current = isDec
+      const t = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = isDec
         ? (eased * (target / 10)).toFixed(1)
         : Math.floor(eased * target);
-      el.textContent = isDec ? current : current;
-      if (elapsed < 1) requestAnimationFrame(update);
+      if (t < 1) requestAnimationFrame(update);
       else el.textContent = isDec ? (target / 10).toFixed(1) : target;
     };
     requestAnimationFrame(update);
   }
-
   const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -1295,16 +1245,14 @@
       }
     });
   }, { threshold: 0.3 });
-
   document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
 
-  /* ── FORM SUBMIT ────────────────────────────── */
+  /* ── FORM SUBMIT ─────────────────────────────── */
   function handleSubmit(e) {
     e.preventDefault();
     const btn = e.target.querySelector('.btn-submit');
-    btn.textContent = 'Request Sent ✓';
-    btn.style.background = '#4a8c5a';
-    btn.style.color = '#f3ece0';
+    btn.textContent = 'Request Sent! We\'ll be in touch soon.';
+    btn.style.background = '#1e6b30';
     btn.disabled = true;
   }
 </script>
